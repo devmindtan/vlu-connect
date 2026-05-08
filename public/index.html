@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLU Connect - Đăng nhập</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .left-section h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .left-section p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .right-section p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember-forgot a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .remember-forgot a:hover {
+            color: #764ba2;
+        }
+
+        .checkbox {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-microsoft {
+            width: 100%;
+            padding: 12px;
+            background: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-microsoft:hover {
+            background: #106ebe;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 120, 212, 0.3);
+        }
+
+        .microsoft-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #999;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .info-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .info-box strong {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-section {
+                padding: 30px 20px;
+            }
+
+            .right-section {
+                padding: 30px 20px;
+            }
+
+            .left-section h1 {
+                font-size: 24px;
+            }
+
+            .right-section h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <div class="logo">🎓</div>
+            <h1>VLU Connect</h1>
+            <p>Kết nối tài khoản Microsoft của bạn với hệ thống VLU để truy cập các dịch vụ nội bộ một cách dễ dàng.</p>
+            <p style="font-size: 13px; margin-top: 20px;">
+                ✓ Bảo mật cao<br>
+                ✓ Đăng nhập một lần<br>
+                ✓ Truy cập toàn bộ dịch vụ
+            </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <h2>Đăng Nhập</h2>
+            <p>Sử dụng tài khoản Microsoft của trường VLU</p>
+
+            <div class="info-box">
+                <strong>💡 Lưu ý:</strong> Bạn cần có tài khoản Microsoft từ trường VLU (@vlu.edu.vn) để đăng nhập.
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email (không bắt buộc)</label>
+                    <input type="email" id="email" name="email" placeholder="user@vlu.edu.vn">
+                </div>
+
+                <div class="remember-forgot">
+                    <label style="display: flex; align-items: center; margin: 0;">
+                        <input type="checkbox" class="checkbox" id="remember">
+                        Nhớ tôi
+                    </label>
+                    <a href="#forgot">Quên tài khoản?</a>
+                </div>
+
+                <button type="button" class="btn-login" onclick="handleLocalLogin()">
+                    Đăng Nhập Bằng Email
+                </button>
+            </form>
+
+            <div class="divider">HOẶC</div>
+
+            <button class="btn-microsoft" onclick="handleMicrosoftLogin()">
+                <svg class="microsoft-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="9" height="9" fill="white"/>
+                    <rect x="11" y="1" width="9" height="9" fill="white"/>
+                    <rect x="1" y="11" width="9" height="9" fill="white"/>
+                    <rect x="11" y="11" width="9" height="9" fill="white"/>
+                </svg>
+                Đăng Nhập Bằng Microsoft 365
+            </button>
+
+            <p style="text-align: center; margin-top: 20px; font-size: 12px; color: #999;">
+                Bằng việc đăng nhập, bạn đồng ý với <a href="#" style="color: #667eea;">Điều khoản dịch vụ</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function handleMicrosoftLogin() {
+            // Chuyển hướng tới route OAuth login
+            window.location.href = '/auth/login';
+        }
+
+        function handleLocalLogin() {
+            const email = document.getElementById('email').value;
+            if (!email) {
+                alert('Vui lòng nhập email của bạn');
+                return;
+            }
+            // Có thể mở rộng với logic đăng nhập cục bộ
+            alert('Tính năng này sẽ được phát triển. Vui lòng sử dụng đăng nhập Microsoft!');
+        }
+
+        // Lắng nghe phím Enter
+        document.getElementById('email')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleLocalLogin();
+            }
+        });
+    </script>
+</body>
+</html>
