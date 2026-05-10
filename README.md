@@ -57,8 +57,6 @@ npm install
 3. Chọn **Delegated permissions**
 4. Tìm và chọn:
    - `User.Read` - Đọc thông tin cá nhân
-   - `Mail.Read` - Đọc email
-   - `Calendars.Read` - Đọc lịch
 5. Nhấn **Grant admin consent**
 
 ### 4. Tạo File .env
