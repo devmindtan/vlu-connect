@@ -19,12 +19,14 @@ Một ứng dụng web hiện đại cho phép sinh viên và giáo viên Đại
 ## 🚀 Cài Đặt
 
 ### 1. Clone Repository
+
 ```bash
 git clone https://github.com/devmindtan/vlu-connect.git
 cd vlu-connect
 ```
 
 ### 2. Cài Đặt Dependencies
+
 ```bash
 npm install
 ```
@@ -132,22 +134,25 @@ vlu-connect/
 
 ## 🛠️ API Endpoints
 
-| Method | Endpoint | Mô Tả |
-|--------|----------|-------|
-| GET | `/` | Trang đăng nhập |
-| GET | `/auth/login` | Bắt đầu OAuth flow |
-| GET | `/auth/callback` | Callback sau khi OAuth |
-| GET | `/dashboard` | Dashboard (yêu cầu đăng nhập) |
-| GET | `/api/user` | Lấy thông tin user (JSON) |
-| GET | `/auth/logout` | Đăng xuất |
-| GET | `/health` | Health check |
+| Method | Endpoint         | Mô Tả                         |
+| ------ | ---------------- | ----------------------------- |
+| GET    | `/`              | Trang đăng nhập               |
+| GET    | `/auth/login`    | Bắt đầu OAuth flow            |
+| GET    | `/auth/callback` | Callback sau khi OAuth        |
+| GET    | `/dashboard`     | Dashboard (yêu cầu đăng nhập) |
+| GET    | `/api/user`      | Lấy thông tin user (JSON)     |
+| GET    | `/auth/logout`   | Đăng xuất                     |
+| GET    | `/health`        | Health check                  |
 
 ## 📚 Tài Liệu Thêm
 
 - [Microsoft MSAL Node Documentation](https://github.com/AzureAD/microsoft-authentication-library-for-js)
 - [Express.js Documentation](https://expressjs.com)
 - [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview)
+- [API v1.0 endpoint](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0)
+- [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
 - [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/)
+- [Decode JWT](https://jwt.ms/)
 
 ## 🤝 Phát Triển Tiếp Theo
 
@@ -162,18 +167,22 @@ vlu-connect/
 ## ⚠️ Troubleshooting
 
 ### Lỗi: "Invalid client ID"
+
 - Kiểm tra CLIENT_ID trong .env
 - Đảm bảo nó khớp với Application ID từ Azure
 
 ### Lỗi: "Redirect URI mismatch"
+
 - Kiểm tra REDIRECT_URI trong .env khớp với cấu hình trong Azure
 - Chú ý phần port nếu thay đổi
 
 ### Lỗi: "AADSTS50011"
+
 - Redirect URI không được đăng ký trong Azure
 - Thêm từng URI vào "Authentication" > "Redirect URIs"
 
 ### Session không lưu
+
 - Kiểm tra SESSION_SECRET trong .env
 - Xóa cookies và thử lại
 - Đảm bảo `express-session` đã được cài đặt
@@ -181,6 +190,7 @@ vlu-connect/
 ## 📞 Hỗ Trợ
 
 Nếu gặp vấn đề, vui lòng:
+
 1. Kiểm tra logs trong terminal
 2. Xem troubleshooting section
 3. Tạo issue trên GitHub
