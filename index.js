@@ -121,3 +121,4 @@ app.listen(PORT, () => {
   console.log(`🚀 Server đang chạy tại http://localhost:${PORT}`);
   console.log(`📝 Đăng nhập tại http://localhost:${PORT}/auth/login`);
 });
+module.exports = app;
