@@ -5,16 +5,15 @@ Một ứng dụng web hiện đại cho phép sinh viên và giáo viên Đại
 ## 🎯 Tính Năng
 
 - ✅ **Đăng nhập bằng Microsoft 365** - Sử dụng OAuth 2.0 flow
-- ✅ **Giao diện đẹp và thân thiện** - Responsive design
-- ✅ **Quản lý session** - Bảo mật cao
-- ✅ **Dashboard cá nhân** - Hiển thị thông tin người dùng
-- ✅ **Tích hợp Microsoft Graph API** - Truy cập email, lịch, tài liệu
+- ✅ **Giao diện đăng nhập và Dashboard hiển thị thông tin đơn giản** - Hiển thị thông tin người dùng
+- ✅ **Quản lý session** - Tăng bảo mật ca
+- ✅ **Tích hợp Microsoft Graph API** - Truy cập thông tin của tài khoản đó nếu được cho phép
 
 ## 📋 Yêu Cầu
 
 - Node.js v16 trở lên
 - npm hoặc yarn
-- Tài khoản Microsoft Azure AD (cho trường VLU)
+- Tài khoản Microsoft Azure AD (cho trường VLU hoặc bất kì tài khoản nào khác)
 
 ## 🚀 Cài Đặt
 
@@ -140,9 +139,8 @@ vlu-connect/
 | GET    | `/auth/login`    | Bắt đầu OAuth flow            |
 | GET    | `/auth/callback` | Callback sau khi OAuth        |
 | GET    | `/dashboard`     | Dashboard (yêu cầu đăng nhập) |
-| GET    | `/api/user`      | Lấy thông tin user (JSON)     |
+| GET    | `/api/me`        | Lấy thông tin user (JSON)     |
 | GET    | `/auth/logout`   | Đăng xuất                     |
-| GET    | `/health`        | Health check                  |
 
 ## 📚 Tài Liệu Thêm
 
