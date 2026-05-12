@@ -1,6 +1,6 @@
-# VLU Connect - Kết Nối Tài Khoản Microsoft
+# Azure Connect - Kết Nối Tài Khoản Microsoft
 
-Một ứng dụng web hiện đại cho phép sinh viên và giáo viên Đại học Nông Lâm TP.HCM (VLU) kết nối và xác thực tài khoản Microsoft 365 của trường.
+Một ứng dụng cho phép sinh viên và giáo viên Đại học hoặc cá nhân kết nối và xác thực tài khoản Microsoft của trường.
 
 ## 🎯 Tính Năng
 
@@ -97,14 +97,13 @@ npm run dev
 
 1. Truy cập http://localhost:3000
 2. Nhấn **"Đăng Nhập Bằng Microsoft 365"**
-3. Đăng nhập bằng tài khoản Microsoft của trường (@vlu.edu.vn)
+3. Đăng nhập bằng tài khoản Microsoft của trường (Ví dụ: @vlu.edu.vn)
 4. Chấp nhận yêu cầu cấp quyền
 5. Sẽ được chuyển hướng tới dashboard
 
 ### 2. Dashboard
 
 - Xem thông tin cá nhân
-- Truy cập các dịch vụ: Email, Lịch học, OneDrive, Teams
 - Đăng xuất an toàn
 
 ## 📁 Cấu Trúc Project
