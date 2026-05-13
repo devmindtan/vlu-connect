@@ -20,7 +20,7 @@ Một ứng dụng cho phép sinh viên và giáo viên Đại học hoặc cá 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/devmindtan/vlu-connect.git
+git clone https://github.com/devmindtan/azure-connect.git
 cd vlu-connect
 ```
 
